@@ -5,6 +5,8 @@ import BottomNavigation from "../../layout/BottomNavigation";
 import TopNavigation from "../../layout/TopNavigation";
 import TopGuide from "../Main/components/TopGuide";
 import MyBoardBox from "./components/MyBoardbox";
+import PopularBoardBox from "./components/PopularBoardbox";
+import RealtimeBoardBox from"./components/RealtimeBoardbox";
 
 const Index = () => {
     return (
@@ -19,7 +21,13 @@ const Index = () => {
                 <TopGuide/>
             </div>
             <div ClassName="My-Board">
-                <MyBoardBox />
+                <MyBoardBox/>
+            </div>
+            <div className="Realtime-Board">
+                <RealtimeBoardBox/>
+            </div>
+            <div className="Popular-Board">
+                <PopularBoardBox/>
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ import newIcon from "../../../assets/icon/new.svg";
 
 import vectorRight from "../../../assets/vector/vectorRightRed.svg"
 
-const MyBoardWrapper = styled.div`
+const RealtimeBoardWrapper = styled.div`
   
   margin : 12px 16px;
 
@@ -54,13 +54,13 @@ const MyBoardWrapper = styled.div`
   }
 
   .MyBoard-pagetitle {
-    display = block;
+    display = flex;
     height: 12px;
     margin-top: 12px;
   }
 
   .MyBoard-pagetitles{
-
+    display = block;
   }
 
   .board-title{
@@ -76,26 +76,14 @@ const MyBoardWrapper = styled.div`
     margin-left: 12px;
   }
 
-  .AAA{
-    display flex;
-    
-    .board-content{
-      text-align: left;
-      color: ${COLORS.grey_300}
-      font-weight: 400;
-      font-size: 12px;
-      margin-left: 12px;
-    }
-  
-  }
 
  `;
 
 
-const MyBoardBox = ({MyBoard_name}) => {
+const RealtimeBoardBox = ({MyBoard_name}) => {
   const hasNewIcon = dummyMyboard.isNew?newIcon:''; 
   return(
-    <MyBoardWrapper>
+    <RealtimeBoardWrapper>
       <div className= "MyBoard-Wrapper">
         <div className = "MyBoard-titles">
           <div className = "title-name">
@@ -108,10 +96,10 @@ const MyBoardBox = ({MyBoard_name}) => {
           <div className="MyBoard-pagetitles">
               <Link className="MyBoard-pagetitle" to ="/board">   
               {dummyMyboard.map((board) =>
-                <div className="AAA">
+                <div>
                 <h1 className= "board-title">{board.category}</h1>
                 <p className= "board-content">{board.title}</p>
-                <img className= "new-icon" src={hasNewIcon}/>
+                <img className="new-icon" src={hasNewIcon}/>
                 </div>
               )
               }  
@@ -120,8 +108,8 @@ const MyBoardBox = ({MyBoard_name}) => {
 
           </div>
         </div>
-    </MyBoardWrapper>
+    </RealtimeBoardWrapper>
   );
 };
 
-export default MyBoardBox;
+export default RealtimeBoardBox;
